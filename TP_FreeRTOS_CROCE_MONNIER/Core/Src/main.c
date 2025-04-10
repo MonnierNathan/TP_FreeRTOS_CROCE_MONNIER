@@ -60,6 +60,7 @@ void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN 0 */
 
 #define STACK_SIZE 1000
+#define DELAY_0 100
 #define DELAY_1 1000
 #define DELAY_2 1500
 
@@ -100,7 +101,7 @@ void CodeLedONOFF(void* p){
 	while(1){
 		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 		printf("ON OFF \n\r");
-		vTaskDelay(duree);
+		vTaskDelay(pdMS_TO_TICKS(duree));
 	}
 }
 
@@ -125,7 +126,7 @@ int main(void)
 		CodeLedONOFF, // Function that implements the task.
 		"TaskCode0", // Text name for the task.
 		STACK_SIZE, // Stack size in words, not bytes.
-		(void *) DELAY_1, // Parameter passed into the task.
+		(void *) DELAY_0, // Parameter passed into the task.
 		1,//Priority at which the task is created.
 		&xHandle1 ); // Used to pass out the created task's handle.
 
