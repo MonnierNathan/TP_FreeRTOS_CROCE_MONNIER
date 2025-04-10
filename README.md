@@ -62,6 +62,9 @@ while(1){
 ## 1.1 Tâche simple
 
 **1 En quoi le paramètre TOTAL_HEAP_SIZE a-t-il de l’importance ?**
+
+TOTAL_HEAP_SIZE is the total amount of RAM available to the RTOS kernel. TOTAL_HEAP_SIZE setting has no effect unless heap_1.c, heap_2.c, heap_4.c or heap_5.c are being used by the application The value chosen by the user should take into account the application consumption of RAM otherwise it will lead to link issues!
+
 **2  
 	- Créez une tâche permettant de faire changer l’état de la LED toutes les 100ms
 et profitez-en pour afficher du texte à chaque changement d’état.**
