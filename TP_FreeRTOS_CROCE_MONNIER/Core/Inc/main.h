@@ -171,6 +171,8 @@ void Error_Handler(void);
 #define SDMMC_D0_GPIO_Port GPIOD
 #define TP3_Pin GPIO_PIN_15
 #define TP3_GPIO_Port GPIOH
+#define LD2_Pin GPIO_PIN_1
+#define LD2_GPIO_Port GPIOI
 #define OTG_FS_ID_Pin GPIO_PIN_10
 #define OTG_FS_ID_GPIO_Port GPIOA
 #define RCC_OSC32_IN_Pin GPIO_PIN_14
