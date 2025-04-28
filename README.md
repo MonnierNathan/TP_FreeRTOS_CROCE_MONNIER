@@ -114,15 +114,98 @@ La macro portTICK_PERIOD_MS dans FreeRTOS joue un rôle très important pour con
 TaskGive donne un sémaphore toutes les 100ms. Affichez du texte avant et
 après avoir donné le sémaphore. TaskTake prend le sémaphore. Affichez du
 texte avant et après avoir pris le sémaphore.**
+```c
+SemaphoreHandle_t sem_led_on;
+SemaphoreHandle_t sem_led_off;
+
+void CodeLedON(void* p){
+	int duree = (int) p;
+	while(1){
+		vTaskDelay(duree);
+		xSemaphoreGive(sem_led_off);
+		printf("Give_OFF \n\r"); printf("\n\r");vTaskDelay(100);
+
+	}
+}
+
+void CodeLedOFF(void* p){
+	while(1){
+
+		xSemaphoreTake(sem_led_off, 3000)
+		printf("Take_OFF \n\r"); printf("\n\r");
+		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+	}
+}
+
+int main(){
+
+	sem_led_on = xSemaphoreCreateBinary(); /* New! */
+	sem_led_off = xSemaphoreCreateBinary(); /* New! */
+
+```
 
 **4 Ajoutez un mécanisme de gestion d’erreur lors de l’acquisition du sémaphore.
 On pourra par exemple invoquer un reset software au STM32 si le sémaphore
 n’est pas acquis au bout d’une seconde.**
 
+````c
+void CodeLedON(void* p){
+	int duree = (int) p;
+	while(1){
+		vTaskDelay(duree);
+		xSemaphoreGive(sem_led_off);
+		printf("Give_OFF \n\r"); printf("\n\r");vTaskDelay(100);
+
+	}
+}
+
+void CodeLedOFF(void* p){
+	while(1){
+
+		if(xSemaphoreTake(sem_led_off, 3000)==pdFALSE){
+			printf("reset\n\r");
+			NVIC_SystemReset;
+		}
+		else{
+		printf("Take_OFF \n\r"); printf("\n\r");
+		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+		}
+	}
+}
+````
+
 **5 Pour valider la gestion d’erreur, ajoutez 100ms au delai de TaskGive à chaque
 itération.**
+````c
+void CodeLedON(void* p){
+	int duree = (int) p;
+	while(1){
+		vTaskDelay(duree);
+		xSemaphoreGive(sem_led_off);
+		printf("Give_OFF \n\r"); printf("\n\r");vTaskDelay(100);
+		xSemaphoreTake(sem_led_off, portMAX_DELAY); //pour tester le pdFALSE
+
+	}
+}
+
+void CodeLedOFF(void* p){
+	while(1){
+
+		if(xSemaphoreTake(sem_led_off, 3000)==pdFALSE){
+			printf("reset\n\r");
+			NVIC_SystemReset;
+		}
+		else{
+		printf("Take_OFF \n\r"); printf("\n\r");
+		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+		}
+	}
+}
+````
 
 **6 Changez les priorités. Expliquez les changements dans l’affichage.**
+
+Nous avons inversé les priorité des deux taches donc l'affichage est aussi inversé.
 
 ---
 
