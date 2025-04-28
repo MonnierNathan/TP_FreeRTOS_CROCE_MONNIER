@@ -62,8 +62,9 @@ void MX_FREERTOS_Init(void);
 #define STACK_SIZE 1000
 #define DELAY_0 1000
 #define DELAY_1 1000
-#define DELAY_2 1500
+#define DELAY_2 1000
 
+void TaskCode1(void* p);
 void TaskCode2(void* p);
 
 // minicom -D /dev/ttyACM-1
@@ -74,29 +75,35 @@ HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
 return ch;
 }
 
-/*
+SemaphoreHandle_t sem_led_on;
+SemaphoreHandle_t sem_led_off;
+
 void CodeLedON(void* p){
 	int duree = (int) p;
-	//char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
 	while(1){
-		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
-		printf("ON\n\r");
 		vTaskDelay(duree);
+		xSemaphoreGive(sem_led_off);
+		printf("Give_OFF \n\r"); printf("\n\r");vTaskDelay(100);
+		//xSemaphoreTake(sem_led_off, portMAX_DELAY); //pour tester le pdFALSE
+
 	}
 }
 
 void CodeLedOFF(void* p){
-
-	int duree = (int) p;
-	//char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
 	while(1){
-		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-		printf("OFF \n\r");
-		vTaskDelay(duree);
+
+		if(xSemaphoreTake(sem_led_off, 1000)==pdFALSE){
+			printf("reset\n\r");
+			NVIC_SystemReset;
+		}
+		else{
+		printf("Take_OFF \n\r"); printf("\n\r");
+		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+		}
 	}
 }
-*/
 
+/*
 void CodeLedONOFF(void* p){
 
 	int duree = (int) p;
@@ -108,6 +115,7 @@ void CodeLedONOFF(void* p){
 	}
 }
 
+*/
 /* USER CODE END 0 */
 
 /**
@@ -118,13 +126,11 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
-	//xTaskCreate(TaskCode1);
 
 	BaseType_t xReturned;
 	TaskHandle_t xHandle1 = NULL;
 	TaskHandle_t xHandle2 = NULL;
-
-
+	/*
 	xReturned = xTaskCreate(
 		CodeLedONOFF, // Function that implements the task.
 		"TaskCode0", // Text name for the task.
@@ -132,8 +138,11 @@ int main(void)
 		(void *) DELAY_0, // Parameter passed into the task.
 		1,//Priority at which the task is created.
 		&xHandle1 ); // Used to pass out the created task's handle.
+	*/
 
-	/*
+	sem_led_on = xSemaphoreCreateBinary(); /* New! */
+	sem_led_off = xSemaphoreCreateBinary(); /* New! */
+
 	xReturned = xTaskCreate(
 	CodeLedON, // Function that implements the task.
 	"TaskCode1", // Text name for the task.
@@ -147,9 +156,9 @@ int main(void)
 	"TaskCode2", // Text name for the task.
 	STACK_SIZE, // Stack size in words, not bytes.
 	(void *) DELAY_2, // Parameter passed into the task.
-	1,// Priority at which the task is created.
+	2,// Priority at which the task is created.
 	&xHandle2 ); // Used to pass out the created task's handle.
-	*/
+
 
   /* USER CODE END 1 */
 
