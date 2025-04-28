@@ -75,6 +75,7 @@ task
 
 **- Quel est le rôle de la macro portTICK_PERIOD_MS ?**
 
+La macro portTICK_PERIOD_MS dans FreeRTOS joue un rôle très important pour convertir les "ticks" du système en millisecondes. Elle sert à traduire la durée d’un tick du système en millisecondes, facilitant ainsi le travail avec des délais ou des temporisations en unités de temps humainement compréhensibles.
 ---
 
 ## 1.2 Sémaphores pour la synchronisation

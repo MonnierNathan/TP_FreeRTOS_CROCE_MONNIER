@@ -60,11 +60,14 @@ void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN 0 */
 
 #define STACK_SIZE 1000
-#define DELAY_0 100
+#define DELAY_0 1000
 #define DELAY_1 1000
 #define DELAY_2 1500
 
 void TaskCode2(void* p);
+
+// minicom -D /dev/ttyACM-1
+// ctrl+a puis q
 
 int __io_putchar(int ch) {
 HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, HAL_MAX_DELAY);

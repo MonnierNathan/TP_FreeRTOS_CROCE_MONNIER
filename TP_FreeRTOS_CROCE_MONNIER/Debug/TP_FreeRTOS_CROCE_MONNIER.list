@@ -39,9 +39,9 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  17 .debug_line   0000f94d  00000000  00000000  00042294  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000f21c7  00000000  00000000  00051be1  2**0
+ 18 .debug_str    000f21c8  00000000  00000000  00051be1  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000043  00000000  00000000  00143da8  2**0
+ 19 .comment      00000043  00000000  00000000  00143da9  2**0
                   CONTENTS, READONLY
  20 .debug_frame  000039b4  00000000  00000000  00143dec  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
@@ -2072,57 +2072,56 @@ int main(void)
  8000fc4:	9301      	str	r3, [sp, #4]
  8000fc6:	2301      	movs	r3, #1
  8000fc8:	9300      	str	r3, [sp, #0]
- 8000fca:	2364      	movs	r3, #100	@ 0x64
- 8000fcc:	f44f 727a 	mov.w	r2, #1000	@ 0x3e8
- 8000fd0:	490a      	ldr	r1, [pc, #40]	@ (8000ffc <main+0x48>)
- 8000fd2:	480b      	ldr	r0, [pc, #44]	@ (8001000 <main+0x4c>)
- 8000fd4:	f002 fcf7 	bl	80039c6 <xTaskCreate>
- 8000fd8:	60b8      	str	r0, [r7, #8]
+ 8000fca:	f44f 737a 	mov.w	r3, #1000	@ 0x3e8
+ 8000fce:	f44f 727a 	mov.w	r2, #1000	@ 0x3e8
+ 8000fd2:	490a      	ldr	r1, [pc, #40]	@ (8000ffc <main+0x48>)
+ 8000fd4:	480a      	ldr	r0, [pc, #40]	@ (8001000 <main+0x4c>)
+ 8000fd6:	f002 fcf6 	bl	80039c6 <xTaskCreate>
+ 8000fda:	60b8      	str	r0, [r7, #8]
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
- 8000fda:	f000 fa68 	bl	80014ae <HAL_Init>
+ 8000fdc:	f000 fa67 	bl	80014ae <HAL_Init>
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
 
   /* Configure the system clock */
   SystemClock_Config();
- 8000fde:	f000 f811 	bl	8001004 <SystemClock_Config>
+ 8000fe0:	f000 f810 	bl	8001004 <SystemClock_Config>
   /* USER CODE BEGIN SysInit */
 
   /* USER CODE END SysInit */
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
- 8000fe2:	f7ff fb39 	bl	8000658 <MX_GPIO_Init>
+ 8000fe4:	f7ff fb38 	bl	8000658 <MX_GPIO_Init>
   MX_USART1_UART_Init();
- 8000fe6:	f000 f987 	bl	80012f8 <MX_USART1_UART_Init>
+ 8000fe8:	f000 f986 	bl	80012f8 <MX_USART1_UART_Init>
 
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */
 
   MX_FREERTOS_Init();
- 8000fea:	f7ff fb11 	bl	8000610 <MX_FREERTOS_Init>
+ 8000fec:	f7ff fb10 	bl	8000610 <MX_FREERTOS_Init>
   vTaskStartScheduler();
- 8000fee:	f002 fe5b 	bl	8003ca8 <vTaskStartScheduler>
+ 8000ff0:	f002 fe5a 	bl	8003ca8 <vTaskStartScheduler>
 
   /* Start scheduler */
   osKernelStart();
- 8000ff2:	f002 fb67 	bl	80036c4 <osKernelStart>
+ 8000ff4:	f002 fb66 	bl	80036c4 <osKernelStart>
   /* We should never get here as control is now taken by the scheduler */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
   while (1)
- 8000ff6:	bf00      	nop
- 8000ff8:	e7fd      	b.n	8000ff6 <main+0x42>
- 8000ffa:	bf00      	nop
+ 8000ff8:	bf00      	nop
+ 8000ffa:	e7fd      	b.n	8000ff8 <main+0x44>
  8000ffc:	08005a28 	.word	0x08005a28
  8001000:	08000f71 	.word	0x08000f71
 

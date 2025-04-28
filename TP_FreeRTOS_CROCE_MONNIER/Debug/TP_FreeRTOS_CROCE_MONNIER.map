@@ -5521,30 +5521,30 @@ LOAD /opt/st/stm32cubeide_1.18.0/plugins/com.st.stm32cube.ide.mcu.externaltools.
  .debug_line    0x0000e985      0x748 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o
  .debug_line    0x0000f0cd      0x880 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
 
-.debug_str      0x00000000    0xf21c7
- .debug_str     0x00000000    0xf21c7 ./Core/Src/freertos.o
+.debug_str      0x00000000    0xf21c8
+ .debug_str     0x00000000    0xf21c8 ./Core/Src/freertos.o
                               0xe80a2 (size before relaxing)
- .debug_str     0x000f21c7    0xe2004 ./Core/Src/gpio.o
- .debug_str     0x000f21c7    0xebe7b ./Core/Src/main.o
- .debug_str     0x000f21c7    0xe24e9 ./Core/Src/stm32f7xx_hal_msp.o
- .debug_str     0x000f21c7    0xe5bcb ./Core/Src/stm32f7xx_it.o
- .debug_str     0x000f21c7     0x9a00 ./Core/Src/syscalls.o
- .debug_str     0x000f21c7     0x779e ./Core/Src/sysmem.o
- .debug_str     0x000f21c7    0xe0131 ./Core/Src/system_stm32f7xx.o
- .debug_str     0x000f21c7    0xe276d ./Core/Src/usart.o
- .debug_str     0x000f21c7       0x9e ./Core/Startup/startup_stm32f746nghx.o
- .debug_str     0x000f21c7    0xe0a9a ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
- .debug_str     0x000f21c7    0xe0ab7 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
- .debug_str     0x000f21c7    0xe01ef ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
- .debug_str     0x000f21c7    0xe03a0 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o
- .debug_str     0x000f21c7    0xe0493 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
- .debug_str     0x000f21c7    0xe03cb ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o
- .debug_str     0x000f21c7    0xe0de0 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o
- .debug_str     0x000f21c7     0xe895 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
- .debug_str     0x000f21c7     0xab94 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
- .debug_str     0x000f21c7     0xceba ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- .debug_str     0x000f21c7     0x86b9 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o
- .debug_str     0x000f21c7     0xb3b1 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .debug_str     0x000f21c8    0xe2004 ./Core/Src/gpio.o
+ .debug_str     0x000f21c8    0xebe7c ./Core/Src/main.o
+ .debug_str     0x000f21c8    0xe24e9 ./Core/Src/stm32f7xx_hal_msp.o
+ .debug_str     0x000f21c8    0xe5bcb ./Core/Src/stm32f7xx_it.o
+ .debug_str     0x000f21c8     0x9a00 ./Core/Src/syscalls.o
+ .debug_str     0x000f21c8     0x779e ./Core/Src/sysmem.o
+ .debug_str     0x000f21c8    0xe0131 ./Core/Src/system_stm32f7xx.o
+ .debug_str     0x000f21c8    0xe276d ./Core/Src/usart.o
+ .debug_str     0x000f21c8       0x9e ./Core/Startup/startup_stm32f746nghx.o
+ .debug_str     0x000f21c8    0xe0a9a ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o
+ .debug_str     0x000f21c8    0xe0ab7 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o
+ .debug_str     0x000f21c8    0xe01ef ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o
+ .debug_str     0x000f21c8    0xe03a0 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o
+ .debug_str     0x000f21c8    0xe0493 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o
+ .debug_str     0x000f21c8    0xe03cb ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o
+ .debug_str     0x000f21c8    0xe0de0 ./Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o
+ .debug_str     0x000f21c8     0xe895 ./Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
+ .debug_str     0x000f21c8     0xab94 ./Middlewares/Third_Party/FreeRTOS/Source/list.o
+ .debug_str     0x000f21c8     0xceba ./Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ .debug_str     0x000f21c8     0x86b9 ./Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o
+ .debug_str     0x000f21c8     0xb3b1 ./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
 
 .comment        0x00000000       0x43
  .comment       0x00000000       0x43 ./Core/Src/freertos.o
