@@ -122,7 +122,7 @@ void CodeLedON(void* p){
 	int duree = (int) p;
 	while(1){
 		vTaskDelay(duree);
-		xSemaphoreGive(sem_led_off);
+		xSemaphoreGive(sem_led_off); // on donne un jeton pour que la deuxième tâche puisse s'éxecuter
 		printf("Give_OFF \n\r"); printf("\n\r");vTaskDelay(100);
 
 	}
@@ -131,9 +131,9 @@ void CodeLedON(void* p){
 void CodeLedOFF(void* p){
 	while(1){
 
-		xSemaphoreTake(sem_led_off, 3000)
+		xSemaphoreTake(sem_led_off, 3000); // la tâche attend la présence d'un jetons pour continuer
 		printf("Take_OFF \n\r"); printf("\n\r");
-		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin); // on change l'état de la LED
 	}
 }
 
@@ -162,9 +162,9 @@ void CodeLedON(void* p){
 void CodeLedOFF(void* p){
 	while(1){
 
-		if(xSemaphoreTake(sem_led_off, 3000)==pdFALSE){
+		if(xSemaphoreTake(sem_led_off, 3000)==pdFALSE){ // on verifi que le jeton puisse être pris dans le temps impartis soit 3 secondes
 			printf("reset\n\r");
-			NVIC_SystemReset;
+			NVIC_SystemReset; // reset du software en cas de non présence d'un jeton dans la temps impatri
 		}
 		else{
 		printf("Take_OFF \n\r"); printf("\n\r");
