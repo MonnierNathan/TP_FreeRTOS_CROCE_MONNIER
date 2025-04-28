@@ -84,8 +84,7 @@ void CodeLedON(void* p){
 	int duree = (int) p;
 	while(1){
 		vTaskDelay(duree);
-		xTaskNotifyGive(xHandle2);
-		//xSemaphoreGive(sem_led_off);
+		xSemaphoreGive(sem_led_off);
 		printf("Give_OFF \n\r"); printf("\n\r");vTaskDelay(100);
 		//xSemaphoreTake(sem_led_off, portMAX_DELAY); //pour tester le pdFALSE
 
@@ -95,25 +94,14 @@ void CodeLedON(void* p){
 void CodeLedOFF(void* p){
 	while(1){
 
-	        if (ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(3000)) == 0)
-	        {
-	            printf("reset\r\n");
-	            NVIC_SystemReset();
-	        }
-	        else
-	        {
-	            printf("Take_OFF\r\n");
-	            HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-	        }
-		/*if(xSemaphoreTake(sem_led_off, 1000)==pdFALSE){
+		if(xSemaphoreTake(sem_led_off, 1000)==pdFALSE){
 			printf("reset\n\r");
 			NVIC_SystemReset;
 		}
 		else{
 		printf("Take_OFF \n\r"); printf("\n\r");
 		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-		}*/
-
+		}
 	}
 }
 
