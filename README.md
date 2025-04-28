@@ -69,13 +69,44 @@ TOTAL_HEAP_SIZE is the total amount of RAM available to the RTOS kernel. TOTAL_H
 	- Créez une tâche permettant de faire changer l’état de la LED toutes les 100ms
 et profitez-en pour afficher du texte à chaque changement d’état.**
 
-```
-task
+```c
+#define DELAY_0 100
+
+void CodeLedONOFF(void* p){
+
+	int duree = (int) p;
+	//char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
+	while(1){
+		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+		printf("ON OFF \n\r");
+		vTaskDelay(pdMS_TO_TICKS(duree));
+	}
+}
+
+int main(void)
+{
+
+  /* USER CODE BEGIN 1 */
+	//xTaskCreate(TaskCode1);
+
+	BaseType_t xReturned;
+	TaskHandle_t xHandle1 = NULL;
+	TaskHandle_t xHandle2 = NULL;
+
+
+	xReturned = xTaskCreate(
+		CodeLedONOFF, // Function that implements the task.
+		"TaskCode0", // Text name for the task.
+		STACK_SIZE, // Stack size in words, not bytes.
+		(void *) DELAY_0, // Parameter passed into the task.
+		1,//Priority at which the task is created.
+		&xHandle1 ); // Used to pass out the created task's handle.
 ```
 
 **- Quel est le rôle de la macro portTICK_PERIOD_MS ?**
 
 La macro portTICK_PERIOD_MS dans FreeRTOS joue un rôle très important pour convertir les "ticks" du système en millisecondes. Elle sert à traduire la durée d’un tick du système en millisecondes, facilitant ainsi le travail avec des délais ou des temporisations en unités de temps humainement compréhensibles.
+
 ---
 
 ## 1.2 Sémaphores pour la synchronisation
