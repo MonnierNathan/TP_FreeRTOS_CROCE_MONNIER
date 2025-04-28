@@ -92,7 +92,7 @@ void CodeLedON(void* p){
 void CodeLedOFF(void* p){
 	while(1){
 
-		if(xSemaphoreTake(sem_led_off, 3000)==pdFALSE){
+		if(xSemaphoreTake(sem_led_off, 1000)==pdFALSE){
 			printf("reset\n\r");
 			NVIC_SystemReset;
 		}
