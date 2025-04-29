@@ -227,7 +227,27 @@ TaskTake pour réceptionner et afficher cette valeur.**
 
 **10 Observez attentivement la sortie dans la console. Expliquez d’où vient le problème.**
 
+Les deux taches attendes 2ticks.
+Cela est du à la réantrance, la tache 2 étant de plus haute priorité elle s'éxécute pendant la tache 1 remplacant la valeur sur le delay de la tache 1.
+
 **11 Proposez une solution en utilisant un sémaphore Mutex.**
+
+````c
+void task_bug(void * pvParameters)
+{
+	int delay = (int) pvParameters;
+	for(;;)
+	{
+		xSemaphoreTake(sem_delay, 3000);
+		printf("Je suis %s et je m'endors pour \
+		%d ticks\r\n", pcTaskGetName(NULL), delay);
+
+		vTaskDelay(delay);
+		xSemaphoreGive(sem_delay);
+	}
+
+}
+````
 
 ---
 
