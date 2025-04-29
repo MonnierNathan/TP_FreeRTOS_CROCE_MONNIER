@@ -61,8 +61,14 @@ void MX_FREERTOS_Init(void);
 
 #define STACK_SIZE 1000
 #define DELAY_0 1000
-#define DELAY_1 1000
-#define DELAY_2 1000
+#define DELAY_1 2000
+#define DELAY_2 1500
+
+#define Q_TEST_LENGTH 8
+#define Q_TEST_SIZE 4 // sizeof(uint8_t)
+
+QueueHandle_t q_TEST = NULL;
+
 
 void TaskCode1(void* p);
 void TaskCode2(void* p);
@@ -75,49 +81,51 @@ HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
 return ch;
 }
 
-TaskHandle_t xHandle1 = NULL;
-TaskHandle_t xHandle2 = NULL;
-//SemaphoreHandle_t sem_led_on;
-//SemaphoreHandle_t sem_led_off;
-
-void CodeLedON(void* p){
+void Code1(void* p){
 	int duree = (int) p;
+	int val_queue = 0;
 	while(1){
-		vTaskDelay(duree);
-		xTaskNotifyGive(xHandle2);
-		//xSemaphoreGive(sem_led_off);
-		printf("Give_OFF \n\r"); printf("\n\r");vTaskDelay(100);
-		//xSemaphoreTake(sem_led_off, portMAX_DELAY); //pour tester le pdFALSE
+		printf("Code 1 \n\r");
 
-	}
-}
-
-void CodeLedOFF(void* p){
-	while(1){
-
-	        if (ulTaskNotifyTake(pdTRUE, pdMS_TO_TICKS(3000)) == 0)
-	        {
-	            printf("reset\r\n");
-	            NVIC_SystemReset();
-	        }
-	        else
-	        {
-	            printf("Take_OFF\r\n");
-	            HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-	        }
-		/*if(xSemaphoreTake(sem_led_off, 1000)==pdFALSE){
-			printf("reset\n\r");
-			NVIC_SystemReset;
+		if (uxQueueSpacesAvailable (q_TEST) <= 0){
+			printf("pb taille queue\r\n");
 		}
 		else{
-		printf("Take_OFF \n\r"); printf("\n\r");
-		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-		}*/
+			xQueueSend(q_TEST,(void *)&val_queue,portMAX_DELAY);
+			val_queue++;
+		}
 
+		vTaskDelay(duree);
 	}
 }
 
+void Code2(void* p){
 
+	int duree = (int) p;
+
+	int val_to_process;
+
+	while(1){
+		printf("Code 2 \n\r");
+		(q_TEST, (void *)&val_to_process,portMAX_DELAY);
+		printf("%d \r\n", val_to_process);
+		vTaskDelay(duree);
+	}
+}
+
+/*
+void CodeLedONOFF(void* p){
+
+	int duree = (int) p;
+	//char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
+	while(1){
+		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+		printf("ON OFF \n\r");
+		vTaskDelay(pdMS_TO_TICKS(duree));
+	}
+}
+
+*/
 /* USER CODE END 0 */
 
 /**
@@ -128,21 +136,38 @@ int main(void)
 {
 
   /* USER CODE BEGIN 1 */
+	//xTaskCreate(TaskCode1);
 
-	xTaskCreate(
-	CodeLedON, // Function that implements the task.
+	BaseType_t xReturned;
+	TaskHandle_t xHandle1 = NULL;
+	TaskHandle_t xHandle2 = NULL;
+
+	/*
+	xReturned = xTaskCreate(
+		CodeLedONOFF, // Function that implements the task.
+		"TaskCode0", // Text name for the task.
+		STACK_SIZE, // Stack size in words, not bytes.
+		(void *) DELAY_0, // Parameter passed into the task.
+		1,//Priority at which the task is created.
+		&xHandle1 ); // Used to pass out the created task's handle.
+	*/
+
+	q_TEST = xQueueCreate(Q_TEST_LENGTH, Q_TEST_SIZE);
+
+	xReturned = xTaskCreate(
+	Code1, // Function that implements the task.
 	"TaskCode1", // Text name for the task.
 	STACK_SIZE, // Stack size in words, not bytes.
 	(void *) DELAY_1, // Parameter passed into the task.
-	1,//Priority at which the task is created.
+	2,//Priority at which the task is created.
 	&xHandle1 ); // Used to pass out the created task's handle.
 
-	xTaskCreate(
-	CodeLedOFF, // Function that implements the task.
+	xReturned = xTaskCreate(
+	Code2, // Function that implements the task.
 	"TaskCode2", // Text name for the task.
 	STACK_SIZE, // Stack size in words, not bytes.
 	(void *) DELAY_2, // Parameter passed into the task.
-	2,// Priority at which the task is created.
+	1,// Priority at which the task is created.
 	&xHandle2 ); // Used to pass out the created task's handle.
 
 
