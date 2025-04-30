@@ -68,7 +68,7 @@ void MX_FREERTOS_Init(void);
 #define Q_TEST_LENGTH 8
 #define Q_TEST_SIZE 4 // sizeof(uint8_t)
 
-QueueHandle_t q_TEST = NULL;
+QueueHandle_t q_SHELL = NULL;
 h_shell_t var_shell;
 
 void TaskCode1(void* p);
@@ -82,47 +82,49 @@ HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
 return ch;
 }
 
-int fonction(int argc, char ** argv)
+int fct_led(h_shell_t *h, int argc, char ** argv)
 {
-	printf("Je suis une fonction bidon\r\n");
+	//printf("fonction led\r\n");
+	if (uxQueueSpacesAvailable (q_SHELL) <= 0){
+		printf("pb taille queue\r\n");
+	}
+	else{
+		//printf("send : %s \r\n",argv[1]);
+		xQueueSend(q_SHELL,(void *)&argv[1],portMAX_DELAY);
+	}
 
 	return 0;
 }
 
-/*
-void Code1(void* p){
-	int duree = (int) p;
-	int val_queue = 0;
-	while(1){
-		printf("Code 1 \n\r");
 
-		if (uxQueueSpacesAvailable (q_TEST) <= 0){
-			printf("pb taille queue\r\n");
+void CodeShell(void* p){
+	while(1){
+		//printf("Task Shell");
+		shell_run(&var_shell);
+	}
+}
+
+void CodeLED(void* p){
+	int val_to_process = 500;
+	while(1){
+		//printf("Task LED");
+		//printf("%d \r\n", val_to_process);
+		if(xQueuePeek(q_SHELL, 500, 0)==pdTRUE){
+			xQueueReceive(q_SHELL, (void *)&val_to_process,0);
+			//printf("val to process :%d \r\n",atoi(val_to_process));
+		}
+		if(atoi(val_to_process)==0){
+			HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, RESET);
 		}
 		else{
-			xQueueSend(q_TEST,(void *)&val_queue,portMAX_DELAY);
-			val_queue++;
+			//printf("val to process :%d \r\n",atoi(val_to_process));
+			HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+			vTaskDelay(atoi(val_to_process));
 		}
-
-		vTaskDelay(duree);
 	}
 }
 
-void Code2(void* p){
 
-	int duree = (int) p;
-
-	int val_to_process;
-
-	while(1){
-		printf("Code 2 \n\r");
-		(q_TEST, (void *)&val_to_process,portMAX_DELAY);
-		printf("%d \r\n", val_to_process);
-		vTaskDelay(duree);
-	}
-}
-
-*shek/
 /* USER CODE END 0 */
 
 /**
@@ -135,29 +137,29 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	//xTaskCreate(TaskCode1);
 
-	//BaseType_t xReturned;
-	//TaskHandle_t xHandle1 = NULL;
-	//TaskHandle_t xHandle2 = NULL;
+	BaseType_t xReturned;
+	TaskHandle_t xHandle1 = NULL;
+	TaskHandle_t xHandle2 = NULL;
 
 
-	q_TEST = xQueueCreate(Q_TEST_LENGTH, Q_TEST_SIZE);
+	q_SHELL = xQueueCreate(Q_TEST_LENGTH, Q_TEST_SIZE);
 
-	/*xReturned = xTaskCreate(
-	Code1, // Function that implements the task.
+	xReturned = xTaskCreate(
+	CodeShell, // Function that implements the task.
 	"TaskCode1", // Text name for the task.
 	STACK_SIZE, // Stack size in words, not bytes.
 	(void *) DELAY_1, // Parameter passed into the task.
-	2,//Priority at which the task is created.
+	1,//Priority at which the task is created.
 	&xHandle1 ); // Used to pass out the created task's handle.
 
 	xReturned = xTaskCreate(
-	Code2, // Function that implements the task.
+	CodeLED, // Function that implements the task.
 	"TaskCode2", // Text name for the task.
 	STACK_SIZE, // Stack size in words, not bytes.
 	(void *) DELAY_2, // Parameter passed into the task.
 	1,// Priority at which the task is created.
 	&xHandle2 ); // Used to pass out the created task's handle.
-	*/
+
 
   /* USER CODE END 1 */
 
@@ -186,8 +188,8 @@ int main(void)
 	var_shell.drv.transmit = drv_uart1_transmit;
 
   shell_init(&var_shell);
-  shell_add(&var_shell,'f', fonction, "Une fonction inutile");
-  shell_run(&var_shell);
+  shell_add(&var_shell,'l', fct_led, "Fonction de clignotement de la LED");
+
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */
