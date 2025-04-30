@@ -26,6 +26,8 @@
 /* USER CODE BEGIN Includes */
 #include "FreeRTOS.h"
 #include "stdio.h"
+#include "shell.h"
+#include "drv_uart1.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -60,7 +62,6 @@ void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN 0 */
 
 #define STACK_SIZE 1000
-#define DELAY_0 1000
 #define DELAY_1 2000
 #define DELAY_2 1500
 
@@ -68,7 +69,7 @@ void MX_FREERTOS_Init(void);
 #define Q_TEST_SIZE 4 // sizeof(uint8_t)
 
 QueueHandle_t q_TEST = NULL;
-
+h_shell_t var_shell;
 
 void TaskCode1(void* p);
 void TaskCode2(void* p);
@@ -81,6 +82,14 @@ HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
 return ch;
 }
 
+int fonction(int argc, char ** argv)
+{
+	printf("Je suis une fonction bidon\r\n");
+
+	return 0;
+}
+
+/*
 void Code1(void* p){
 	int duree = (int) p;
 	int val_queue = 0;
@@ -113,19 +122,7 @@ void Code2(void* p){
 	}
 }
 
-/*
-void CodeLedONOFF(void* p){
-
-	int duree = (int) p;
-	//char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
-	while(1){
-		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-		printf("ON OFF \n\r");
-		vTaskDelay(pdMS_TO_TICKS(duree));
-	}
-}
-
-*/
+*shek/
 /* USER CODE END 0 */
 
 /**
@@ -138,23 +135,14 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	//xTaskCreate(TaskCode1);
 
-	BaseType_t xReturned;
-	TaskHandle_t xHandle1 = NULL;
-	TaskHandle_t xHandle2 = NULL;
+	//BaseType_t xReturned;
+	//TaskHandle_t xHandle1 = NULL;
+	//TaskHandle_t xHandle2 = NULL;
 
-	/*
-	xReturned = xTaskCreate(
-		CodeLedONOFF, // Function that implements the task.
-		"TaskCode0", // Text name for the task.
-		STACK_SIZE, // Stack size in words, not bytes.
-		(void *) DELAY_0, // Parameter passed into the task.
-		1,//Priority at which the task is created.
-		&xHandle1 ); // Used to pass out the created task's handle.
-	*/
 
 	q_TEST = xQueueCreate(Q_TEST_LENGTH, Q_TEST_SIZE);
 
-	xReturned = xTaskCreate(
+	/*xReturned = xTaskCreate(
 	Code1, // Function that implements the task.
 	"TaskCode1", // Text name for the task.
 	STACK_SIZE, // Stack size in words, not bytes.
@@ -169,7 +157,7 @@ int main(void)
 	(void *) DELAY_2, // Parameter passed into the task.
 	1,// Priority at which the task is created.
 	&xHandle2 ); // Used to pass out the created task's handle.
-
+	*/
 
   /* USER CODE END 1 */
 
@@ -194,12 +182,16 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
+	var_shell.drv.receive = drv_uart1_receive;
+	var_shell.drv.transmit = drv_uart1_transmit;
+
+  shell_init(&var_shell);
+  shell_add(&var_shell,'f', fonction, "Une fonction inutile");
+  shell_run(&var_shell);
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */
-
   MX_FREERTOS_Init();
-  vTaskStartScheduler();
 
   /* Start scheduler */
   osKernelStart();
@@ -217,6 +209,7 @@ int main(void)
   }
   /* USER CODE END 3 */
 }
+
 /**
   * @brief System Clock Configuration
   * @retval None
