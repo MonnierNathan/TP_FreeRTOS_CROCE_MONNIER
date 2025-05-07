@@ -28,6 +28,7 @@
 #include "stdio.h"
 #include "shell.h"
 #include "drv_uart1.h"
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -69,10 +70,15 @@ void MX_FREERTOS_Init(void);
 #define Q_TEST_SIZE 4 // sizeof(uint8_t)
 
 QueueHandle_t q_SHELL = NULL;
+QueueHandle_t q_SPAM = NULL;
+
 h_shell_t var_shell;
 
-void TaskCode1(void* p);
-void TaskCode2(void* p);
+
+
+void TaskShell(void* p);
+void TaskLED(void* p);
+void TaskSPAM(void* p);
 
 // minicom -D /dev/ttyACM-1
 // ctrl+a puis q
@@ -96,6 +102,18 @@ int fct_led(h_shell_t *h, int argc, char ** argv)
 	return 0;
 }
 
+int fct_SPAM(h_shell_t *h, int argc, char ** argv)
+{
+	if (uxQueueSpacesAvailable (q_SPAM) <= 0){
+		printf("pb taille queue\r\n");
+	}
+	else{
+		printf("send : %s \r\n",argv[1]);
+		xQueueSend(q_SPAM,(void *)&argv[1],portMAX_DELAY);
+	}
+
+	return 0;
+}
 
 void CodeShell(void* p){
 	while(1){
@@ -109,7 +127,7 @@ void CodeLED(void* p){
 	while(1){
 		//printf("Task LED");
 		//printf("%d \r\n", val_to_process);
-		if(xQueuePeek(q_SHELL, 500, 0)==pdTRUE){
+		if(xQueuePeek(q_SHELL,(void *)  500, 0)==pdTRUE){
 			xQueueReceive(q_SHELL, (void *)&val_to_process,0);
 			//printf("val to process :%d \r\n",atoi(val_to_process));
 		}
@@ -117,13 +135,45 @@ void CodeLED(void* p){
 			HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, RESET);
 		}
 		else{
-			//printf("val to process :%d \r\n",atoi(val_to_process));
+			printf("val to process :%d \r\n",atoi(val_to_process));
 			HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
 			vTaskDelay(atoi(val_to_process));
 		}
 	}
 }
 
+void CodeSPAM(void* p){
+	int val_to_process = 500;
+	bool flag = RESET;
+	static int cpt = 0;
+	while(1){
+		//printf("Task SPAM\r\n");
+		//vTaskDelay(1000);
+
+		if(xQueuePeek(q_SPAM, (void *) 500, 0)==pdTRUE){
+			xQueueReceive(q_SPAM, (void *)&val_to_process,0);
+			printf("received : %d \r\n",atoi(val_to_process));
+			cpt = atoi(val_to_process);
+			flag = SET;
+			if(cpt<=0){
+				printf("wrong argument !\r\n");
+				flag = RESET;
+			}
+		}
+		if(cpt>0 && flag == SET){
+			printf("SPAM : %d \r\n",cpt);
+						//HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+						cpt--;
+						vTaskDelay(200);
+		}
+		if (cpt==0 && flag == SET){
+			printf("End Function Serial SPAM\r\n");
+			flag = RESET;
+		}
+
+
+	}
+}
 
 /* USER CODE END 0 */
 
@@ -140,13 +190,14 @@ int main(void)
 	BaseType_t xReturned;
 	TaskHandle_t xHandle1 = NULL;
 	TaskHandle_t xHandle2 = NULL;
-
+	TaskHandle_t xHandle3 = NULL;
 
 	q_SHELL = xQueueCreate(Q_TEST_LENGTH, Q_TEST_SIZE);
+	q_SPAM = xQueueCreate(Q_TEST_LENGTH, Q_TEST_SIZE);
 
 	xReturned = xTaskCreate(
 	CodeShell, // Function that implements the task.
-	"TaskCode1", // Text name for the task.
+	"TaskShell", // Text name for the task.
 	STACK_SIZE, // Stack size in words, not bytes.
 	(void *) DELAY_1, // Parameter passed into the task.
 	1,//Priority at which the task is created.
@@ -154,11 +205,19 @@ int main(void)
 
 	xReturned = xTaskCreate(
 	CodeLED, // Function that implements the task.
-	"TaskCode2", // Text name for the task.
+	"TaskLED", // Text name for the task.
 	STACK_SIZE, // Stack size in words, not bytes.
 	(void *) DELAY_2, // Parameter passed into the task.
 	1,// Priority at which the task is created.
 	&xHandle2 ); // Used to pass out the created task's handle.
+
+	xReturned = xTaskCreate(
+	CodeSPAM, // Function that implements the task.
+	"TaskSPAM", // Text name for the task.
+	STACK_SIZE, // Stack size in words, not bytes.
+	(void *) DELAY_2, // Parameter passed into the task.
+	1,// Priority at which the task is created.
+	&xHandle3 ); // Used to pass out the created task's handle.
 
 
   /* USER CODE END 1 */
@@ -189,6 +248,7 @@ int main(void)
 
   shell_init(&var_shell);
   shell_add(&var_shell,'l', fct_led, "Fonction de clignotement de la LED");
+  shell_add(&var_shell,'s', fct_SPAM, "Fonction de SPAM");
 
   /* USER CODE END 2 */
 
