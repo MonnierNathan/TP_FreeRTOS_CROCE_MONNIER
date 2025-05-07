@@ -93,6 +93,7 @@ int fct_led(h_shell_t *h, int argc, char ** argv)
 	//printf("fonction led\r\n");
 	if (uxQueueSpacesAvailable (q_SHELL) <= 0){
 		printf("pb taille queue\r\n");
+		Error_Handler();
 	}
 	else{
 		//printf("send : %s \r\n",argv[1]);
@@ -106,6 +107,7 @@ int fct_SPAM(h_shell_t *h, int argc, char ** argv)
 {
 	if (uxQueueSpacesAvailable (q_SPAM) <= 0){
 		printf("pb taille queue\r\n");
+		Error_Handler();
 	}
 	else{
 		printf("send : %s \r\n",argv[1]);
@@ -124,20 +126,29 @@ void CodeShell(void* p){
 
 void CodeLED(void* p){
 	int val_to_process = 500;
+	int val_blink;
+	bool flag = RESET; //evite d'éteindre en boucle
 	while(1){
-		//printf("Task LED");
-		//printf("%d \r\n", val_to_process);
+
 		if(xQueuePeek(q_SHELL,(void *)  500, 0)==pdTRUE){
 			xQueueReceive(q_SHELL, (void *)&val_to_process,0);
-			//printf("val to process :%d \r\n",atoi(val_to_process));
+			if(atoi(val_to_process)<0){
+				printf("wrong argument !\r\n");
+				flag = RESET;
+			}
+			else{
+				val_blink = atoi(val_to_process);
+				printf("LED Blink each : %d ms\r\n",val_blink);
+				flag = SET;
+			}
 		}
-		if(atoi(val_to_process)==0){
+		if(val_blink == 0 && flag == SET){
 			HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, RESET);
+			flag = RESET;
 		}
-		else{
-			printf("val to process :%d \r\n",atoi(val_to_process));
+		if(val_blink > 0 && flag == SET){
 			HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-			vTaskDelay(atoi(val_to_process));
+			vTaskDelay(val_blink);
 		}
 	}
 }
@@ -147,17 +158,17 @@ void CodeSPAM(void* p){
 	bool flag = RESET;
 	static int cpt = 0;
 	while(1){
-		//printf("Task SPAM\r\n");
-		//vTaskDelay(1000);
 
 		if(xQueuePeek(q_SPAM, (void *) 500, 0)==pdTRUE){
 			xQueueReceive(q_SPAM, (void *)&val_to_process,0);
 			printf("received : %d \r\n",atoi(val_to_process));
 			cpt = atoi(val_to_process);
-			flag = SET;
 			if(cpt<=0){
 				printf("wrong argument !\r\n");
 				flag = RESET;
+			}
+			else{
+				flag = SET;
 			}
 		}
 		if(cpt>0 && flag == SET){
@@ -218,6 +229,10 @@ int main(void)
 	(void *) DELAY_2, // Parameter passed into the task.
 	1,// Priority at which the task is created.
 	&xHandle3 ); // Used to pass out the created task's handle.
+
+	if (xReturned != pdPASS){
+		Error_Handler();
+	}
 
 
   /* USER CODE END 1 */

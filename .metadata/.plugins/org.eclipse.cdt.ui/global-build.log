@@ -1,60 +1,103 @@
-09:16:26 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
+09:31:50 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'CodeLED':
-../Core/Src/main.c:133:20: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-  133 |                 if(atoi(val_to_process)==0){
-      |                    ^~~~
-../Core/Src/main.c: In function 'CodeSPAM':
-../Core/Src/main.c:146:9: error: unknown type name 'boolean'
-  146 |         boolean flag = RESET;
-      |         ^~~~~~~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:189:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  189 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-09:17:25 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'CodeLED':
-../Core/Src/main.c:134:20: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-  134 |                 if(atoi(val_to_process)==0){
-      |                    ^~~~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:190:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  190 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
+../Core/Src/main.c:135:28: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  135 |                         if(atoi(val_to_process)<0){
+      |                            ^~~~
 arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
  
 arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
 arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
    text	   data	    bss	    dec	    hex	filename
-  32624	    108	  19204	  51936	   cae0	TP_FreeRTOS_CROCE_MONNIER.elf
+  32704	    108	  19204	  52016	   cb30	TP_FreeRTOS_CROCE_MONNIER.elf
 Finished building: default.size.stdout
  
 Finished building: TP_FreeRTOS_CROCE_MONNIER.list
  
-09:18:08 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
+09:31:52 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
+make -j12 all 
+arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32704	    108	  19204	  52016	   cb30	TP_FreeRTOS_CROCE_MONNIER.elf
+Finished building: default.size.stdout
+ 
+09:31:57 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
+make -j12 all 
+arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
+   text	   data	    bss	    dec	    hex	filename
+  32704	    108	  19204	  52016	   cb30	TP_FreeRTOS_CROCE_MONNIER.elf
+Finished building: default.size.stdout
+ 
+09:34:10 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'CodeLED':
-../Core/Src/main.c:134:20: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
-  134 |                 if(atoi(val_to_process)==0){
-      |                    ^~~~
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:190:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  190 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
+../Core/Src/main.c:134:28: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  134 |                         if(atoi(val_to_process)<0){
+      |                            ^~~~
 arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
  
 arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
 arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
    text	   data	    bss	    dec	    hex	filename
-  32624	    108	  19204	  51936	   cae0	TP_FreeRTOS_CROCE_MONNIER.elf
+  32708	    108	  19204	  52020	   cb34	TP_FreeRTOS_CROCE_MONNIER.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP_FreeRTOS_CROCE_MONNIER.list
+ 
+09:39:03 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'CodeLED':
+../Core/Src/main.c:135:28: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  135 |                         if(atoi(val_to_process)<0){
+      |                            ^~~~
+arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
+ 
+arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
+arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
+   text	   data	    bss	    dec	    hex	filename
+  32692	    108	  19204	  52004	   cb24	TP_FreeRTOS_CROCE_MONNIER.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP_FreeRTOS_CROCE_MONNIER.list
+ 
+09:39:43 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'CodeLED':
+../Core/Src/main.c:135:28: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  135 |                         if(atoi(val_to_process)<0){
+      |                            ^~~~
+arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
+ 
+arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
+arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
+   text	   data	    bss	    dec	    hex	filename
+  32692	    108	  19204	  52004	   cb24	TP_FreeRTOS_CROCE_MONNIER.elf
+Finished building: default.size.stdout
+ 
+Finished building: TP_FreeRTOS_CROCE_MONNIER.list
+ 
+09:39:55 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'CodeLED':
+../Core/Src/main.c:135:28: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  135 |                         if(atoi(val_to_process)<0){
+      |                            ^~~~
+arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
+ 
+arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
+arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
+   text	   data	    bss	    dec	    hex	filename
+  32692	    108	  19204	  52004	   cb24	TP_FreeRTOS_CROCE_MONNIER.elf
 Finished building: default.size.stdout
  
 Finished building: TP_FreeRTOS_CROCE_MONNIER.list
