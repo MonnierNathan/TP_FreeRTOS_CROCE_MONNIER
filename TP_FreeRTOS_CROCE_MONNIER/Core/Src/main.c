@@ -26,6 +26,9 @@
 /* USER CODE BEGIN Includes */
 #include "FreeRTOS.h"
 #include "stdio.h"
+#include "shell.h"
+#include "drv_uart1.h"
+#include <stdbool.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -60,11 +63,23 @@ void MX_FREERTOS_Init(void);
 /* USER CODE BEGIN 0 */
 
 #define STACK_SIZE 1000
-#define DELAY_0 1000
-#define DELAY_1 1000
+#define DELAY_1 2000
 #define DELAY_2 1500
 
-void TaskCode2(void* p);
+#define Q_TEST_LENGTH 8
+#define Q_TEST_SIZE 4 // sizeof(uint8_t)
+
+QueueHandle_t q_SHELL = NULL;
+QueueHandle_t q_SPAM = NULL;
+
+h_shell_t var_shell;
+
+
+
+void TaskShell(void* p);
+void TaskLED(void* p);
+void TaskSPAM(void* p);
+void TaskOverFlow(void* p);
 
 // minicom -D /dev/ttyACM-1
 // ctrl+a puis q
@@ -74,39 +89,113 @@ HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, HAL_MAX_DELAY);
 return ch;
 }
 
-/*
-void CodeLedON(void* p){
-	int duree = (int) p;
-	//char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
+int fct_led(h_shell_t *h, int argc, char ** argv)
+{
+	//printf("fonction led\r\n");
+	if (uxQueueSpacesAvailable (q_SHELL) <= 0){
+		printf("pb taille queue\r\n");
+		Error_Handler();
+	}
+	else{
+		//printf("send : %s \r\n",argv[1]);
+		xQueueSend(q_SHELL,(void *)&argv[1],portMAX_DELAY);
+	}
+
+	return 0;
+}
+
+int fct_SPAM(h_shell_t *h, int argc, char ** argv)
+{
+	if (uxQueueSpacesAvailable (q_SPAM) <= 0){
+		printf("pb taille queue\r\n");
+		Error_Handler();
+	}
+	else{
+		//printf("send : %s \r\n",argv[1]);
+		xQueueSend(q_SPAM,(void *)&argv[1],portMAX_DELAY);
+	}
+
+	return 0;
+}
+
+void CodeShell(void* p){
 	while(1){
-		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
-		printf("ON\n\r");
-		vTaskDelay(duree);
+		printf("Task Shell");
+		shell_run(&var_shell);
 	}
 }
 
-void CodeLedOFF(void* p){
-
-	int duree = (int) p;
-	//char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
+void CodeLED(void* p){
+	int val_to_process = 500;
+	int val_blink;
+	bool flag = RESET; //evite d'éteindre en boucle
 	while(1){
-		HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
-		printf("OFF \n\r");
-		vTaskDelay(duree);
+
+		if(xQueuePeek(q_SHELL,(void *)  500, 0)==pdTRUE){
+			xQueueReceive(q_SHELL, (void *)&val_to_process,0);
+			if(atoi(val_to_process)<0){
+				printf("wrong argument !\r\n");
+				flag = RESET;
+			}
+			else{
+				val_blink = atoi(val_to_process);
+				printf("LED Blink each : %d ms\r\n",val_blink);
+				flag = SET;
+			}
+		}
+		if(val_blink == 0 && flag == SET){
+			HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, RESET);
+			flag = RESET;
+		}
+		if(val_blink > 0 && flag == SET){
+			HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+			vTaskDelay(val_blink);
+		}
 	}
 }
-*/
 
-void CodeLedONOFF(void* p){
-
-	int duree = (int) p;
-	//char* s = pcTaskGetName(xTaskGetCurrentTaskHandle());
+void CodeSPAM(void* p){
+	int val_to_process = 500;
+	bool flag = RESET;
+	static int cpt = 0;
 	while(1){
-		HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
-		printf("ON OFF \n\r");
-		vTaskDelay(pdMS_TO_TICKS(duree));
+
+		if(xQueuePeek(q_SPAM, (void *) 500, 0)==pdTRUE){
+			xQueueReceive(q_SPAM, (void *)&val_to_process,0);
+			printf("received : %d \r\n",atoi(val_to_process));
+			cpt = atoi(val_to_process);
+			if(cpt<=0){
+				printf("wrong argument !\r\n");
+				flag = RESET;
+			}
+			else{
+				flag = SET;
+			}
+		}
+		if(cpt>0 && flag == SET){
+			printf("SPAM : %d \r\n",cpt);
+						//HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+						cpt--;
+						vTaskDelay(200);
+		}
+		if (cpt==0 && flag == SET){
+			printf("End Function Serial SPAM\r\n");
+			flag = RESET;
+		}
 	}
 }
+
+void CodeOverFlow(void* p){
+	//char* message = "hello";
+	static int i = 0;
+	while(1){
+		//xQueueSend(q_SPAM,(void *)message,portMAX_DELAY);
+		//printf("send : %d \r\n",i);
+		//i++
+		//vTaskDelay(2000);
+	}
+}
+
 
 /* USER CODE END 0 */
 
@@ -119,37 +208,52 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 	//xTaskCreate(TaskCode1);
-
+	printf("TEST\r\n");
 	BaseType_t xReturned;
 	TaskHandle_t xHandle1 = NULL;
 	TaskHandle_t xHandle2 = NULL;
+	TaskHandle_t xHandle3 = NULL;
+	TaskHandle_t xHandle4 = NULL;
 
+	q_SHELL = xQueueCreate(Q_TEST_LENGTH, Q_TEST_SIZE);
+	q_SPAM = xQueueCreate(Q_TEST_LENGTH, Q_TEST_SIZE);
 
 	xReturned = xTaskCreate(
-		CodeLedONOFF, // Function that implements the task.
-		"TaskCode0", // Text name for the task.
-		STACK_SIZE, // Stack size in words, not bytes.
-		(void *) DELAY_0, // Parameter passed into the task.
-		1,//Priority at which the task is created.
-		&xHandle1 ); // Used to pass out the created task's handle.
-
-	/*
-	xReturned = xTaskCreate(
-	CodeLedON, // Function that implements the task.
-	"TaskCode1", // Text name for the task.
+	CodeShell, // Function that implements the task.
+	"TaskShell", // Text name for the task.
 	STACK_SIZE, // Stack size in words, not bytes.
 	(void *) DELAY_1, // Parameter passed into the task.
 	1,//Priority at which the task is created.
 	&xHandle1 ); // Used to pass out the created task's handle.
 
 	xReturned = xTaskCreate(
-	CodeLedOFF, // Function that implements the task.
-	"TaskCode2", // Text name for the task.
+	CodeLED, // Function that implements the task.
+	"TaskLED", // Text name for the task.
 	STACK_SIZE, // Stack size in words, not bytes.
 	(void *) DELAY_2, // Parameter passed into the task.
 	1,// Priority at which the task is created.
 	&xHandle2 ); // Used to pass out the created task's handle.
-	*/
+
+	xReturned = xTaskCreate(
+	CodeSPAM, // Function that implements the task.
+	"TaskSPAM", // Text name for the task.
+	STACK_SIZE, // Stack size in words, not bytes.
+	(void *) DELAY_2, // Parameter passed into the task.
+	1,// Priority at which the task is created.
+	&xHandle3 ); // Used to pass out the created task's handle.
+
+	xReturned = xTaskCreate(
+	CodeOverFlow, // Function that implements the task.
+	"TaskOverFlow", // Text name for the task.
+	STACK_SIZE, // Stack size in words, not bytes.
+	(void *) DELAY_2, // Parameter passed into the task.
+	1,// Priority at which the task is created.
+	&xHandle4 ); // Used to pass out the created task's handle.*/
+
+	if (xReturned != pdPASS){
+		Error_Handler();
+	}
+
 
   /* USER CODE END 1 */
 
@@ -174,12 +278,17 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
+	var_shell.drv.receive = drv_uart1_receive;
+	var_shell.drv.transmit = drv_uart1_transmit;
+
+  shell_init(&var_shell);
+  shell_add(&var_shell,'l', fct_led, "Fonction de clignotement de la LED");
+  shell_add(&var_shell,'s', fct_SPAM, "Fonction de SPAM");
+
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in cmsis_os2.c) */
-
   MX_FREERTOS_Init();
-  vTaskStartScheduler();
 
   /* Start scheduler */
   osKernelStart();
@@ -197,6 +306,7 @@ int main(void)
   }
   /* USER CODE END 3 */
 }
+
 /**
   * @brief System Clock Configuration
   * @retval None

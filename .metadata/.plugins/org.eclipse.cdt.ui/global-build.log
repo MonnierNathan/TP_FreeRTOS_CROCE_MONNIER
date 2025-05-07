@@ -1,857 +1,99 @@
-10:49:46 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1/port.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/croutine.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/croutine.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/croutine.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/croutine.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/event_groups.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/event_groups.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/event_groups.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/event_groups.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/list.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/list.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/list.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/list.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/queue.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/queue.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/queue.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/queue.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/stream_buffer.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/tasks.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/tasks.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/tasks.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/tasks.o"
+arm-none-eabi-gcc "../Middlewares/Third_Party/FreeRTOS/Source/timers.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Middlewares/Third_Party/FreeRTOS/Source/timers.d" -MT"Middlewares/Third_Party/FreeRTOS/Source/timers.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Middlewares/Third_Party/FreeRTOS/Source/timers.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.d" -MT"Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F7xx_HAL_Driver/Src/stm32f7xx_hal_uart_ex.o"
+arm-none-eabi-gcc "../Core/Src/drv_uart1.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/drv_uart1.d" -MT"Core/Src/drv_uart1.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/drv_uart1.o"
+arm-none-eabi-gcc "../Core/Src/freertos.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/freertos.d" -MT"Core/Src/freertos.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/freertos.o"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'CodeLedON':
-../Core/Src/main.c:79:17: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-   79 |                 printf("ON");
-      |                 ^~~~~~
-../Core/Src/main.c:24:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   23 | #include "gpio.h"
-  +++ |+#include <stdio.h>
-   24 | 
-../Core/Src/main.c:79:17: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-   79 |                 printf("ON");
-      |                 ^~~~~~
-../Core/Src/main.c:79:17: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c: In function 'CodeLedOFF':
-../Core/Src/main.c:89:17: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-   89 |                 printf("OFF");
-      |                 ^~~~~~
-../Core/Src/main.c:89:17: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:105:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  105 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
+arm-none-eabi-gcc "../Core/Src/stm32f7xx_hal_msp.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f7xx_hal_msp.d" -MT"Core/Src/stm32f7xx_hal_msp.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f7xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f7xx_it.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f7xx_it.d" -MT"Core/Src/stm32f7xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f7xx_it.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f7xx.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32f7xx.d" -MT"Core/Src/system_stm32f7xx.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f7xx.o"
+../Core/Src/main.c: In function 'CodeLED':
+../Core/Src/main.c:136:28: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  136 |                         if(atoi(val_to_process)<0){
+      |                            ^~~~
+../Core/Src/main.c: In function 'CodeOverFlow':
+../Core/Src/main.c:190:20: warning: unused variable 'i' [-Wunused-variable]
+  190 |         static int i = 0;
+      |                    ^
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
 arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
  
 arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
 arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
    text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
+  32764	    108	 164444	 197316	  302c4	TP_FreeRTOS_CROCE_MONNIER.elf
 Finished building: default.size.stdout
  
 Finished building: TP_FreeRTOS_CROCE_MONNIER.list
  
-10:49:51 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
+
+11:52:33 Build Finished. 0 errors, 2 warnings. (took 1s.271ms)
+
+11:52:34 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
 make -j12 all 
 arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
    text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
+  32764	    108	 164444	 197316	  302c4	TP_FreeRTOS_CROCE_MONNIER.elf
 Finished building: default.size.stdout
  
-10:50:37 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
+11:52:36 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
 make -j12 all 
 arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
    text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
+  32764	    108	 164444	 197316	  302c4	TP_FreeRTOS_CROCE_MONNIER.elf
 Finished building: default.size.stdout
  
-10:50:56 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-   text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-10:51:21 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
+11:53:11 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'CodeLedON':
-../Core/Src/main.c:79:17: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-   79 |                 printf("ON");
-      |                 ^~~~~~
-../Core/Src/main.c:24:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   23 | #include "gpio.h"
-  +++ |+#include <stdio.h>
-   24 | 
-../Core/Src/main.c:79:17: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-   79 |                 printf("ON");
-      |                 ^~~~~~
-../Core/Src/main.c:79:17: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c: In function 'CodeLedOFF':
-../Core/Src/main.c:89:17: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-   89 |                 printf("OFF");
-      |                 ^~~~~~
-../Core/Src/main.c:89:17: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:105:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  105 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
+../Core/Src/main.c: In function 'CodeLED':
+../Core/Src/main.c:136:28: warning: implicit declaration of function 'atoi' [-Wimplicit-function-declaration]
+  136 |                         if(atoi(val_to_process)<0){
+      |                            ^~~~
+../Core/Src/main.c: In function 'CodeOverFlow':
+../Core/Src/main.c:190:20: warning: unused variable 'i' [-Wunused-variable]
+  190 |         static int i = 0;
+      |                    ^
 arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
  
 arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
 arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
    text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
+  32764	    108	 164444	 197316	  302c4	TP_FreeRTOS_CROCE_MONNIER.elf
 Finished building: default.size.stdout
  
 Finished building: TP_FreeRTOS_CROCE_MONNIER.list
  
-10:51:38 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'CodeLedON':
-../Core/Src/main.c:79:17: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
-   79 |                 printf("ON");
-      |                 ^~~~~~
-../Core/Src/main.c:24:1: note: include '<stdio.h>' or provide a declaration of 'printf'
-   23 | #include "gpio.h"
-  +++ |+#include <stdio.h>
-   24 | 
-../Core/Src/main.c:79:17: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-   79 |                 printf("ON");
-      |                 ^~~~~~
-../Core/Src/main.c:79:17: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c: In function 'CodeLedOFF':
-../Core/Src/main.c:89:17: warning: incompatible implicit declaration of built-in function 'printf' [-Wbuiltin-declaration-mismatch]
-   89 |                 printf("OFF");
-      |                 ^~~~~~
-../Core/Src/main.c:89:17: note: include '<stdio.h>' or provide a declaration of 'printf'
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:105:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  105 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-10:52:19 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:105:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  105 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-10:53:28 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:105:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  105 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23192	    108	  18332	  41632	   a2a0	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-10:54:03 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:105:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  105 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-10:54:46 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:105:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  105 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-10:56:03 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:105:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  105 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:00:37 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:105:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  105 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:01:22 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:105:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  105 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:02:24 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:105:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  105 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:09:44 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:120:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  120 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:142:9: warning: data definition has no type or storage class
-  142 |         xTaskCreate(TaskCode1);
-      |         ^~~~~~~~~~~
-../Core/Src/main.c:142:9: warning: type defaults to 'int' in declaration of 'xTaskCreate' [-Wimplicit-int]
-../Core/Src/main.c:142:9: warning: parameter names (without types) in function declaration
-../Core/Src/main.c:142:9: error: conflicting types for 'xTaskCreate'; have 'int()'
-In file included from ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:57,
-                 from ../Core/Src/main.c:21:
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:330:20: note: previous declaration of 'xTaskCreate' with type 'BaseType_t(void (*)(void *), const char * const,  const uint16_t,  void * const,  UBaseType_t,  struct tskTaskControlBlock ** const)' {aka 'long int(void (*)(void *), const char * const,  const short unsigned int,  void * const,  long unsigned int,  struct tskTaskControlBlock ** const)'}
-  330 |         BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-      |                    ^~~~~~~~~~~
-../Core/Src/main.c:143:9: warning: data definition has no type or storage class
-  143 |         xTaskCreate(TaskCode2);
-      |         ^~~~~~~~~~~
-../Core/Src/main.c:143:9: warning: type defaults to 'int' in declaration of 'xTaskCreate' [-Wimplicit-int]
-../Core/Src/main.c:143:9: warning: parameter names (without types) in function declaration
-../Core/Src/main.c:143:9: error: conflicting types for 'xTaskCreate'; have 'int()'
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:330:20: note: previous declaration of 'xTaskCreate' with type 'BaseType_t(void (*)(void *), const char * const,  const uint16_t,  void * const,  UBaseType_t,  struct tskTaskControlBlock ** const)' {aka 'long int(void (*)(void *), const char * const,  const short unsigned int,  void * const,  long unsigned int,  struct tskTaskControlBlock ** const)'}
-  330 |         BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-      |                    ^~~~~~~~~~~
-../Core/Src/main.c:150:3: warning: data definition has no type or storage class
-  150 |   HAL_Init();
-      |   ^~~~~~~~
-../Core/Src/main.c:150:3: warning: type defaults to 'int' in declaration of 'HAL_Init' [-Wimplicit-int]
-../Core/Src/main.c:150:3: error: conflicting types for 'HAL_Init'; have 'int()'
-In file included from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:185:19: note: previous declaration of 'HAL_Init' with type 'HAL_StatusTypeDef(void)'
-  185 | HAL_StatusTypeDef HAL_Init(void);
-      |                   ^~~~~~~~
-../Core/Src/main.c:157:3: warning: data definition has no type or storage class
-  157 |   SystemClock_Config();
-      |   ^~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:157:3: warning: type defaults to 'int' in declaration of 'SystemClock_Config' [-Wimplicit-int]
-../Core/Src/main.c:157:3: error: conflicting types for 'SystemClock_Config'; have 'int()'
-../Core/Src/main.c:53:6: note: previous declaration of 'SystemClock_Config' with type 'void(void)'
-   53 | void SystemClock_Config(void);
-      |      ^~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:164:3: warning: data definition has no type or storage class
-  164 |   MX_GPIO_Init();
-      |   ^~~~~~~~~~~~
-../Core/Src/main.c:164:3: warning: type defaults to 'int' in declaration of 'MX_GPIO_Init' [-Wimplicit-int]
-../Core/Src/main.c:164:3: error: conflicting types for 'MX_GPIO_Init'; have 'int()'
-In file included from ../Core/Src/main.c:23:
-../Core/Inc/gpio.h:39:6: note: previous declaration of 'MX_GPIO_Init' with type 'void(void)'
-   39 | void MX_GPIO_Init(void);
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:165:3: warning: data definition has no type or storage class
-  165 |   MX_USART1_UART_Init();
-      |   ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:165:3: warning: type defaults to 'int' in declaration of 'MX_USART1_UART_Init' [-Wimplicit-int]
-../Core/Src/main.c:165:3: error: conflicting types for 'MX_USART1_UART_Init'; have 'int()'
-In file included from ../Core/Src/main.c:22:
-../Core/Inc/usart.h:41:6: note: previous declaration of 'MX_USART1_UART_Init' with type 'void(void)'
-   41 | void MX_USART1_UART_Init(void);
-      |      ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:172:3: warning: data definition has no type or storage class
-  172 |   MX_FREERTOS_Init();
-      |   ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:172:3: warning: type defaults to 'int' in declaration of 'MX_FREERTOS_Init' [-Wimplicit-int]
-../Core/Src/main.c:172:3: error: conflicting types for 'MX_FREERTOS_Init'; have 'int()'
-../Core/Src/main.c:54:6: note: previous declaration of 'MX_FREERTOS_Init' with type 'void(void)'
-   54 | void MX_FREERTOS_Init(void);
-      |      ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:173:3: warning: data definition has no type or storage class
-  173 |   vTaskStartScheduler();
-      |   ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:173:3: warning: type defaults to 'int' in declaration of 'vTaskStartScheduler' [-Wimplicit-int]
-../Core/Src/main.c:173:3: error: conflicting types for 'vTaskStartScheduler'; have 'int()'
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:1175:6: note: previous declaration of 'vTaskStartScheduler' with type 'void(void)'
- 1175 | void vTaskStartScheduler( void ) PRIVILEGED_FUNCTION;
-      |      ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:176:3: warning: data definition has no type or storage class
-  176 |   osKernelStart();
-      |   ^~~~~~~~~~~~~
-../Core/Src/main.c:176:3: warning: type defaults to 'int' in declaration of 'osKernelStart' [-Wimplicit-int]
-../Core/Src/main.c:176:3: error: conflicting types for 'osKernelStart'; have 'int()'
-../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:374:10: note: previous declaration of 'osKernelStart' with type 'osStatus(void)'
-  374 | osStatus osKernelStart (void);
-      |          ^~~~~~~~~~~~~
-../Core/Src/main.c:183:3: error: expected identifier or '(' before 'while'
-  183 |   while (1)
-      |   ^~~~~
-../Core/Src/main.c:190:1: error: expected identifier or '(' before '}' token
-  190 | }
-      | ^
-make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-11:09:55 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:120:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  120 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:142:9: warning: data definition has no type or storage class
-  142 |         xTaskCreate(TaskCode1);
-      |         ^~~~~~~~~~~
-../Core/Src/main.c:142:9: warning: type defaults to 'int' in declaration of 'xTaskCreate' [-Wimplicit-int]
-../Core/Src/main.c:142:9: warning: parameter names (without types) in function declaration
-../Core/Src/main.c:142:9: error: conflicting types for 'xTaskCreate'; have 'int()'
-In file included from ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:57,
-                 from ../Core/Src/main.c:21:
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:330:20: note: previous declaration of 'xTaskCreate' with type 'BaseType_t(void (*)(void *), const char * const,  const uint16_t,  void * const,  UBaseType_t,  struct tskTaskControlBlock ** const)' {aka 'long int(void (*)(void *), const char * const,  const short unsigned int,  void * const,  long unsigned int,  struct tskTaskControlBlock ** const)'}
-  330 |         BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-      |                    ^~~~~~~~~~~
-../Core/Src/main.c:143:9: warning: data definition has no type or storage class
-  143 |         xTaskCreate(TaskCode2);
-      |         ^~~~~~~~~~~
-../Core/Src/main.c:143:9: warning: type defaults to 'int' in declaration of 'xTaskCreate' [-Wimplicit-int]
-../Core/Src/main.c:143:9: warning: parameter names (without types) in function declaration
-../Core/Src/main.c:143:9: error: conflicting types for 'xTaskCreate'; have 'int()'
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:330:20: note: previous declaration of 'xTaskCreate' with type 'BaseType_t(void (*)(void *), const char * const,  const uint16_t,  void * const,  UBaseType_t,  struct tskTaskControlBlock ** const)' {aka 'long int(void (*)(void *), const char * const,  const short unsigned int,  void * const,  long unsigned int,  struct tskTaskControlBlock ** const)'}
-  330 |         BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-      |                    ^~~~~~~~~~~
-../Core/Src/main.c:150:3: warning: data definition has no type or storage class
-  150 |   HAL_Init();
-      |   ^~~~~~~~
-../Core/Src/main.c:150:3: warning: type defaults to 'int' in declaration of 'HAL_Init' [-Wimplicit-int]
-../Core/Src/main.c:150:3: error: conflicting types for 'HAL_Init'; have 'int()'
-In file included from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:185:19: note: previous declaration of 'HAL_Init' with type 'HAL_StatusTypeDef(void)'
-  185 | HAL_StatusTypeDef HAL_Init(void);
-      |                   ^~~~~~~~
-../Core/Src/main.c:157:3: warning: data definition has no type or storage class
-  157 |   SystemClock_Config();
-      |   ^~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:157:3: warning: type defaults to 'int' in declaration of 'SystemClock_Config' [-Wimplicit-int]
-../Core/Src/main.c:157:3: error: conflicting types for 'SystemClock_Config'; have 'int()'
-../Core/Src/main.c:53:6: note: previous declaration of 'SystemClock_Config' with type 'void(void)'
-   53 | void SystemClock_Config(void);
-      |      ^~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:164:3: warning: data definition has no type or storage class
-  164 |   MX_GPIO_Init();
-      |   ^~~~~~~~~~~~
-../Core/Src/main.c:164:3: warning: type defaults to 'int' in declaration of 'MX_GPIO_Init' [-Wimplicit-int]
-../Core/Src/main.c:164:3: error: conflicting types for 'MX_GPIO_Init'; have 'int()'
-In file included from ../Core/Src/main.c:23:
-../Core/Inc/gpio.h:39:6: note: previous declaration of 'MX_GPIO_Init' with type 'void(void)'
-   39 | void MX_GPIO_Init(void);
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:165:3: warning: data definition has no type or storage class
-  165 |   MX_USART1_UART_Init();
-      |   ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:165:3: warning: type defaults to 'int' in declaration of 'MX_USART1_UART_Init' [-Wimplicit-int]
-../Core/Src/main.c:165:3: error: conflicting types for 'MX_USART1_UART_Init'; have 'int()'
-In file included from ../Core/Src/main.c:22:
-../Core/Inc/usart.h:41:6: note: previous declaration of 'MX_USART1_UART_Init' with type 'void(void)'
-   41 | void MX_USART1_UART_Init(void);
-      |      ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:172:3: warning: data definition has no type or storage class
-  172 |   MX_FREERTOS_Init();
-      |   ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:172:3: warning: type defaults to 'int' in declaration of 'MX_FREERTOS_Init' [-Wimplicit-int]
-../Core/Src/main.c:172:3: error: conflicting types for 'MX_FREERTOS_Init'; have 'int()'
-../Core/Src/main.c:54:6: note: previous declaration of 'MX_FREERTOS_Init' with type 'void(void)'
-   54 | void MX_FREERTOS_Init(void);
-      |      ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:173:3: warning: data definition has no type or storage class
-  173 |   vTaskStartScheduler();
-      |   ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:173:3: warning: type defaults to 'int' in declaration of 'vTaskStartScheduler' [-Wimplicit-int]
-../Core/Src/main.c:173:3: error: conflicting types for 'vTaskStartScheduler'; have 'int()'
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:1175:6: note: previous declaration of 'vTaskStartScheduler' with type 'void(void)'
- 1175 | void vTaskStartScheduler( void ) PRIVILEGED_FUNCTION;
-      |      ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:176:3: warning: data definition has no type or storage class
-  176 |   osKernelStart();
-      |   ^~~~~~~~~~~~~
-../Core/Src/main.c:176:3: warning: type defaults to 'int' in declaration of 'osKernelStart' [-Wimplicit-int]
-../Core/Src/main.c:176:3: error: conflicting types for 'osKernelStart'; have 'int()'
-../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:374:10: note: previous declaration of 'osKernelStart' with type 'osStatus(void)'
-  374 | osStatus osKernelStart (void);
-      |          ^~~~~~~~~~~~~
-../Core/Src/main.c:183:3: error: expected identifier or '(' before 'while'
-  183 |   while (1)
-      |   ^~~~~
-../Core/Src/main.c:190:1: error: expected identifier or '(' before '}' token
-  190 | }
-      | ^
-make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-11:10:09 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:120:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  120 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-../Core/Src/main.c: At top level:
-../Core/Src/main.c:142:9: warning: data definition has no type or storage class
-  142 |         xTaskCreate(TaskCode1);
-      |         ^~~~~~~~~~~
-../Core/Src/main.c:142:9: warning: type defaults to 'int' in declaration of 'xTaskCreate' [-Wimplicit-int]
-../Core/Src/main.c:142:9: warning: parameter names (without types) in function declaration
-../Core/Src/main.c:142:9: error: conflicting types for 'xTaskCreate'; have 'int()'
-In file included from ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:57,
-                 from ../Core/Src/main.c:21:
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:330:20: note: previous declaration of 'xTaskCreate' with type 'BaseType_t(void (*)(void *), const char * const,  const uint16_t,  void * const,  UBaseType_t,  struct tskTaskControlBlock ** const)' {aka 'long int(void (*)(void *), const char * const,  const short unsigned int,  void * const,  long unsigned int,  struct tskTaskControlBlock ** const)'}
-  330 |         BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-      |                    ^~~~~~~~~~~
-../Core/Src/main.c:143:9: warning: data definition has no type or storage class
-  143 |         xTaskCreate(TaskCode2);
-      |         ^~~~~~~~~~~
-../Core/Src/main.c:143:9: warning: type defaults to 'int' in declaration of 'xTaskCreate' [-Wimplicit-int]
-../Core/Src/main.c:143:9: warning: parameter names (without types) in function declaration
-../Core/Src/main.c:143:9: error: conflicting types for 'xTaskCreate'; have 'int()'
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:330:20: note: previous declaration of 'xTaskCreate' with type 'BaseType_t(void (*)(void *), const char * const,  const uint16_t,  void * const,  UBaseType_t,  struct tskTaskControlBlock ** const)' {aka 'long int(void (*)(void *), const char * const,  const short unsigned int,  void * const,  long unsigned int,  struct tskTaskControlBlock ** const)'}
-  330 |         BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-      |                    ^~~~~~~~~~~
-../Core/Src/main.c:150:3: warning: data definition has no type or storage class
-  150 |   HAL_Init();
-      |   ^~~~~~~~
-../Core/Src/main.c:150:3: warning: type defaults to 'int' in declaration of 'HAL_Init' [-Wimplicit-int]
-../Core/Src/main.c:150:3: error: conflicting types for 'HAL_Init'; have 'int()'
-In file included from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32F7xx_HAL_Driver/Inc/stm32f7xx_hal.h:185:19: note: previous declaration of 'HAL_Init' with type 'HAL_StatusTypeDef(void)'
-  185 | HAL_StatusTypeDef HAL_Init(void);
-      |                   ^~~~~~~~
-../Core/Src/main.c:157:3: warning: data definition has no type or storage class
-  157 |   SystemClock_Config();
-      |   ^~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:157:3: warning: type defaults to 'int' in declaration of 'SystemClock_Config' [-Wimplicit-int]
-../Core/Src/main.c:157:3: error: conflicting types for 'SystemClock_Config'; have 'int()'
-../Core/Src/main.c:53:6: note: previous declaration of 'SystemClock_Config' with type 'void(void)'
-   53 | void SystemClock_Config(void);
-      |      ^~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:164:3: warning: data definition has no type or storage class
-  164 |   MX_GPIO_Init();
-      |   ^~~~~~~~~~~~
-../Core/Src/main.c:164:3: warning: type defaults to 'int' in declaration of 'MX_GPIO_Init' [-Wimplicit-int]
-../Core/Src/main.c:164:3: error: conflicting types for 'MX_GPIO_Init'; have 'int()'
-In file included from ../Core/Src/main.c:23:
-../Core/Inc/gpio.h:39:6: note: previous declaration of 'MX_GPIO_Init' with type 'void(void)'
-   39 | void MX_GPIO_Init(void);
-      |      ^~~~~~~~~~~~
-../Core/Src/main.c:165:3: warning: data definition has no type or storage class
-  165 |   MX_USART1_UART_Init();
-      |   ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:165:3: warning: type defaults to 'int' in declaration of 'MX_USART1_UART_Init' [-Wimplicit-int]
-../Core/Src/main.c:165:3: error: conflicting types for 'MX_USART1_UART_Init'; have 'int()'
-In file included from ../Core/Src/main.c:22:
-../Core/Inc/usart.h:41:6: note: previous declaration of 'MX_USART1_UART_Init' with type 'void(void)'
-   41 | void MX_USART1_UART_Init(void);
-      |      ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:172:3: warning: data definition has no type or storage class
-  172 |   MX_FREERTOS_Init();
-      |   ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:172:3: warning: type defaults to 'int' in declaration of 'MX_FREERTOS_Init' [-Wimplicit-int]
-../Core/Src/main.c:172:3: error: conflicting types for 'MX_FREERTOS_Init'; have 'int()'
-../Core/Src/main.c:54:6: note: previous declaration of 'MX_FREERTOS_Init' with type 'void(void)'
-   54 | void MX_FREERTOS_Init(void);
-      |      ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:173:3: warning: data definition has no type or storage class
-  173 |   vTaskStartScheduler();
-      |   ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:173:3: warning: type defaults to 'int' in declaration of 'vTaskStartScheduler' [-Wimplicit-int]
-../Core/Src/main.c:173:3: error: conflicting types for 'vTaskStartScheduler'; have 'int()'
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:1175:6: note: previous declaration of 'vTaskStartScheduler' with type 'void(void)'
- 1175 | void vTaskStartScheduler( void ) PRIVILEGED_FUNCTION;
-      |      ^~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c:176:3: warning: data definition has no type or storage class
-  176 |   osKernelStart();
-      |   ^~~~~~~~~~~~~
-../Core/Src/main.c:176:3: warning: type defaults to 'int' in declaration of 'osKernelStart' [-Wimplicit-int]
-../Core/Src/main.c:176:3: error: conflicting types for 'osKernelStart'; have 'int()'
-../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:374:10: note: previous declaration of 'osKernelStart' with type 'osStatus(void)'
-  374 | osStatus osKernelStart (void);
-      |          ^~~~~~~~~~~~~
-../Core/Src/main.c:183:3: error: expected identifier or '(' before 'while'
-  183 |   while (1)
-      |   ^~~~~
-make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-11:10:54 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:142:21: error: 'TaskCode1' undeclared (first use in this function); did you mean 'TaskCode2'?
-  142 |         xTaskCreate(TaskCode1);
-      |                     ^~~~~~~~~
-      |                     TaskCode2
-../Core/Src/main.c:142:21: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/main.c:142:9: error: too few arguments to function 'xTaskCreate'
-  142 |         xTaskCreate(TaskCode1);
-      |         ^~~~~~~~~~~
-In file included from ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:57,
-                 from ../Core/Src/main.c:21:
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:330:20: note: declared here
-  330 |         BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-      |                    ^~~~~~~~~~~
-../Core/Src/main.c:143:9: error: too few arguments to function 'xTaskCreate'
-  143 |         xTaskCreate(TaskCode2);
-      |         ^~~~~~~~~~~
-../Middlewares/Third_Party/FreeRTOS/Source/include/task.h:330:20: note: declared here
-  330 |         BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
-      |                    ^~~~~~~~~~~
-../Core/Src/main.c:120:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  120 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-11:11:14 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:120:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  120 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:12:09 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:120:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  120 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23208	    108	  18332	  41648	   a2b0	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:14:26 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:120:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  120 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23216	    108	  18332	  41656	   a2b8	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:15:04 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:120:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  120 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23216	    108	  18332	  41656	   a2b8	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:16:06 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:120:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  120 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23216	    108	  18332	  41656	   a2b8	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:19:51 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:124:22: warning: unused variable 'xHandle2' [-Wunused-variable]
-  124 |         TaskHandle_t xHandle2 = NULL;
-      |                      ^~~~~~~~
-../Core/Src/main.c:122:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  122 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23112	    108	  18332	  41552	   a250	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:20:52 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:121:22: warning: unused variable 'xHandle2' [-Wunused-variable]
-  121 |         TaskHandle_t xHandle2 = NULL;
-      |                      ^~~~~~~~
-../Core/Src/main.c:119:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  119 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23160	    108	  18332	  41600	   a280	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:21:41 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:121:22: warning: unused variable 'xHandle2' [-Wunused-variable]
-  121 |         TaskHandle_t xHandle2 = NULL;
-      |                      ^~~~~~~~
-../Core/Src/main.c:119:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  119 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23160	    108	  18332	  41600	   a280	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:22:12 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:121:22: warning: unused variable 'xHandle2' [-Wunused-variable]
-  121 |         TaskHandle_t xHandle2 = NULL;
-      |                      ^~~~~~~~
-../Core/Src/main.c:119:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  119 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23164	    108	  18332	  41604	   a284	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:23:51 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
+11:53:16 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
 make -j12 all 
 arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
    text	   data	    bss	    dec	    hex	filename
-  23164	    108	  18332	  41604	   a284	TP_FreeRTOS_CROCE_MONNIER.elf
+  32764	    108	 164444	 197316	  302c4	TP_FreeRTOS_CROCE_MONNIER.elf
 Finished building: default.size.stdout
- 
-11:24:22 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:121:22: warning: unused variable 'xHandle2' [-Wunused-variable]
-  121 |         TaskHandle_t xHandle2 = NULL;
-      |                      ^~~~~~~~
-../Core/Src/main.c:119:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  119 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23168	    108	  18332	  41608	   a288	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-11:36:05 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c:64: warning: "DELAY_1" redefined
-   64 | #define DELAY_1 1000
-      | 
-../Core/Src/main.c:63: note: this is the location of the previous definition
-   63 | #define DELAY_1 100
-      | 
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:129:26: error: 'DELAY_0' undeclared (first use in this function); did you mean 'DELAY_1'?
-  129 |                 (void *) DELAY_0, // Parameter passed into the task.
-      |                          ^~~~~~~
-      |                          DELAY_1
-../Core/Src/main.c:129:26: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/main.c:122:22: warning: unused variable 'xHandle2' [-Wunused-variable]
-  122 |         TaskHandle_t xHandle2 = NULL;
-      |                      ^~~~~~~~
-../Core/Src/main.c:120:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  120 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-make: *** [Core/Src/subdir.mk:43: Core/Src/main.o] Error 1
-"make -j12 all" terminated with exit code 2. Build might be incomplete.
-11:36:27 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:122:22: warning: unused variable 'xHandle2' [-Wunused-variable]
-  122 |         TaskHandle_t xHandle2 = NULL;
-      |                      ^~~~~~~~
-../Core/Src/main.c:120:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  120 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23184	    108	  18332	  41624	   a298	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
- 
-08:17:09 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-   text	   data	    bss	    dec	    hex	filename
-  23184	    108	  18332	  41624	   a298	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-08:19:51 **** Incremental Build of configuration Debug for project TP_FreeRTOS_CROCE_MONNIER ****
-make -j12 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F746xx -c -I../Core/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc -I../Drivers/STM32F7xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F7xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:122:22: warning: unused variable 'xHandle2' [-Wunused-variable]
-  122 |         TaskHandle_t xHandle2 = NULL;
-      |                      ^~~~~~~~
-../Core/Src/main.c:120:20: warning: variable 'xReturned' set but not used [-Wunused-but-set-variable]
-  120 |         BaseType_t xReturned;
-      |                    ^~~~~~~~~
-arm-none-eabi-gcc -o "TP_FreeRTOS_CROCE_MONNIER.elf" @"objects.list"   -mcpu=cortex-m7 -T"/home/lcroce/Documents/Dev_Soft/TP_FreeRTOS_CROCE_MONNIER/TP_FreeRTOS_CROCE_MONNIER/STM32F746NGHX_FLASH.ld" --specs=nosys.specs -Wl,-Map="TP_FreeRTOS_CROCE_MONNIER.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: TP_FreeRTOS_CROCE_MONNIER.elf
- 
-arm-none-eabi-size  TP_FreeRTOS_CROCE_MONNIER.elf 
-arm-none-eabi-objdump -h -S TP_FreeRTOS_CROCE_MONNIER.elf  > "TP_FreeRTOS_CROCE_MONNIER.list"
-   text	   data	    bss	    dec	    hex	filename
-  23184	    108	  18332	  41624	   a298	TP_FreeRTOS_CROCE_MONNIER.elf
-Finished building: default.size.stdout
- 
-Finished building: TP_FreeRTOS_CROCE_MONNIER.list
  
