@@ -366,7 +366,61 @@ void CodeLED(void* p){
 
 ---
 
-## 2.4 Écrire une fonction `spam()`, semblable à la fonction `led()` qui affiche du texte dans la liaison série au lieu de faire clignoter les LED. On peut ajouter comme argument le message à afficher et le nombre de valeurs à afficher. Ce genre de fonction peut être utile lorsque l’on travaille avec un capteur
+## 2.4 Écrire une fonction `spam()`, semblable à la fonction `led()` qui affiche du texte dans la liaison série au lieu de faire clignoter les LED. On peut ajouter comme argument le message à afficher et le nombre de valeurs à afficher. Ce genre de fonction peut être utile lorsque l’on travaille avec un capteur.
+
+````c
+int fct_SPAM(h_shell_t *h, int argc, char ** argv)
+{
+	if (uxQueueSpacesAvailable (q_SPAM) <= 0){
+		printf("pb taille queue\r\n");
+	}
+	else{
+		printf("send : %s \r\n",argv[1]);
+		xQueueSend(q_SPAM,(void *)&argv[1],portMAX_DELAY);
+	}
+
+	return 0;
+}
+
+void CodeSPAM(void* p){
+	int val_to_process = 500;
+	bool flag = RESET;
+	static int cpt = 0;
+	while(1){
+		//printf("Task SPAM\r\n");
+		//vTaskDelay(1000);
+
+		if(xQueuePeek(q_SPAM, (void *) 500, 0)==pdTRUE){
+			xQueueReceive(q_SPAM, (void *)&val_to_process,0);
+			printf("received : %d \r\n",atoi(val_to_process));
+			cpt = atoi(val_to_process);
+			flag = SET;
+			if(cpt<=0){
+				printf("wrong argument !\r\n");
+				flag = RESET;
+			}
+		}
+		if(cpt>0 && flag == SET){
+			printf("SPAM : %d \r\n",cpt);
+						//HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+						cpt--;
+						vTaskDelay(200);
+		}
+		if (cpt==0 && flag == SET){
+			printf("End Function Serial SPAM\r\n");
+			flag = RESET;
+		}
+
+
+	}
+}
+
+int main(void)
+{
+	q_SPAM = xQueueCreate(Q_TEST_LENGTH, Q_TEST_SIZE);
+
+  	shell_add(&var_shell,'s', fct_SPAM, "Fonction de SPAM");
+````
 
 ---
 
