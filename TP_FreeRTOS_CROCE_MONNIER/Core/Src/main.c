@@ -79,6 +79,7 @@ h_shell_t var_shell;
 void TaskShell(void* p);
 void TaskLED(void* p);
 void TaskSPAM(void* p);
+void TaskOverFlow(void* p);
 
 // minicom -D /dev/ttyACM-1
 // ctrl+a puis q
@@ -110,7 +111,7 @@ int fct_SPAM(h_shell_t *h, int argc, char ** argv)
 		Error_Handler();
 	}
 	else{
-		printf("send : %s \r\n",argv[1]);
+		//printf("send : %s \r\n",argv[1]);
 		xQueueSend(q_SPAM,(void *)&argv[1],portMAX_DELAY);
 	}
 
@@ -119,7 +120,7 @@ int fct_SPAM(h_shell_t *h, int argc, char ** argv)
 
 void CodeShell(void* p){
 	while(1){
-		//printf("Task Shell");
+		printf("Task Shell");
 		shell_run(&var_shell);
 	}
 }
@@ -181,10 +182,20 @@ void CodeSPAM(void* p){
 			printf("End Function Serial SPAM\r\n");
 			flag = RESET;
 		}
-
-
 	}
 }
+
+void CodeOverFlow(void* p){
+	//char* message = "hello";
+	static int i = 0;
+	while(1){
+		//xQueueSend(q_SPAM,(void *)message,portMAX_DELAY);
+		//printf("send : %d \r\n",i);
+		//i++
+		//vTaskDelay(2000);
+	}
+}
+
 
 /* USER CODE END 0 */
 
@@ -197,11 +208,12 @@ int main(void)
 
   /* USER CODE BEGIN 1 */
 	//xTaskCreate(TaskCode1);
-
+	printf("TEST\r\n");
 	BaseType_t xReturned;
 	TaskHandle_t xHandle1 = NULL;
 	TaskHandle_t xHandle2 = NULL;
 	TaskHandle_t xHandle3 = NULL;
+	TaskHandle_t xHandle4 = NULL;
 
 	q_SHELL = xQueueCreate(Q_TEST_LENGTH, Q_TEST_SIZE);
 	q_SPAM = xQueueCreate(Q_TEST_LENGTH, Q_TEST_SIZE);
@@ -229,6 +241,14 @@ int main(void)
 	(void *) DELAY_2, // Parameter passed into the task.
 	1,// Priority at which the task is created.
 	&xHandle3 ); // Used to pass out the created task's handle.
+
+	xReturned = xTaskCreate(
+	CodeOverFlow, // Function that implements the task.
+	"TaskOverFlow", // Text name for the task.
+	STACK_SIZE, // Stack size in words, not bytes.
+	(void *) DELAY_2, // Parameter passed into the task.
+	1,// Priority at which the task is created.
+	&xHandle4 ); // Used to pass out the created task's handle.*/
 
 	if (xReturned != pdPASS){
 		Error_Handler();
