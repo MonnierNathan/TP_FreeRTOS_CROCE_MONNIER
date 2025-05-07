@@ -221,6 +221,58 @@ notifications à la place des sémaphores.**
 **8 Modifiez TaskGive pour envoyer dans une queue la valeur du timer. Modifiez
 TaskTake pour réceptionner et afficher cette valeur.**
 
+````c
+#define Q_TEST_LENGTH 8
+#define Q_TEST_SIZE 4 // sizeof(uint8_t)
+
+QueueHandle_t q_TEST = NULL; // création de l'objet queue de nom d_TEST
+
+void Code1(void* p){
+	int duree = (int) p;
+	int val_queue = 0;
+	while(1){
+		printf("Code 1 \n\r");
+
+		if (uxQueueSpacesAvailable (q_TEST) <= 0){ // si il n'y a pas de la place dans la queue
+			printf("pb taille queue\r\n");
+		}
+		else{	// si il y en as
+			xQueueSend(q_TEST,(void *)&val_queue,portMAX_DELAY); // on envoie ula valeur du timer
+			val_queue++;
+		}
+
+		vTaskDelay(duree);
+	}
+}
+
+void Code2(void* p){
+
+	int duree = (int) p;
+
+	int val_to_process;
+
+	while(1){
+		printf("Code 2 \n\r");
+		xQueueReceive(q_TEST, (void *)&val_to_process,portMAX_DELAY); // on récupére la valeur du timer dans la queue
+		printf("%d \r\n", val_to_process); // on affiche la valeur dans le terminal serie
+		vTaskDelay(duree);
+	}
+}
+
+int main(void)
+{
+
+  /* USER CODE BEGIN 1 */
+	//xTaskCreate(TaskCode1);
+
+	//BaseType_t xReturned;
+	//TaskHandle_t xHandle1 = NULL;
+	//TaskHandle_t xHandle2 = NULL;
+
+
+	q_TEST = xQueueCreate(Q_TEST_LENGTH, Q_TEST_SIZE); // initialisation de la queue
+````
+
 ---
 
 ## 1.5 Réentrance et exclusion mutuelle
@@ -259,9 +311,15 @@ void task_bug(void * pvParameters)
 
 **3 Expliquer les mécanismes qui mènent à l’exécution de la fonction.**
 
+Lors de la validation de la commande dans le shell par l'utilisateur qui appuie sur la touche entrée, le code du shell vérifie ce que l'utilisateur à entrée et si le début de la commande comprend ce qui a été entré à la ceréation de la fonction `shell_add(&var_shell,'f', fonction, "Une fonction inutile");` le charactére 'f' dans ce cas le shell va éxécuté le code liée à la fonction.
+
 **4 Quel est le problème ?**
 
+Le problème à cette étape est que le shell démarre en tant que boucle infinie de la même façon que RTOS ce qui fait que celui qui démarre en premier est le seul à fonctionné.
+
 **5 Proposer une solution**
+
+La solution serait de démarrer la shell dans une tâche en placant `shell_run(&var_shell);` dans la fonction liée à une tâche.
 
 ---
 
@@ -270,6 +328,41 @@ void task_bug(void * pvParameters)
 ---
 
 ## 2.3 Écrire une fonction `led()`, appelable depuis le shell, permettant de faire clignoter la LED (PI1 sur la carte). Un paramètre de cette fonction configure la periode de clignotement. Une valeur de 0 maintient la LED éteinte.  Le clignotement de la LED s’effectue dans une tâche. Il faut donc trouver un moyen de faire communiquer *proprement* la fonction led avec la tâche de clignotement.
+
+````c
+int fct_led(h_shell_t *h, int argc, char ** argv){
+	//printf("fonction led\r\n");
+	if (uxQueueSpacesAvailable (q_SHELL) <= 0){
+		printf("pb taille queue\r\n");
+	}
+	else{
+		//printf("send : %s \r\n",argv[1]);
+		xQueueSend(q_SHELL,(void *)&argv[1],portMAX_DELAY);
+	}
+
+	return 0;
+}
+
+void CodeLED(void* p){
+	int val_to_process = 500;
+	while(1){
+		//printf("Task LED");
+		//printf("%d \r\n", val_to_process);
+		if(xQueuePeek(q_SHELL, 500, 0)==pdTRUE){
+			xQueueReceive(q_SHELL, (void *)&val_to_process,0);
+			//printf("val to process :%d \r\n",atoi(val_to_process));
+		}
+		if(atoi(val_to_process)==0){
+			HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, RESET);
+		}
+		else{
+			//printf("val to process :%d \r\n",atoi(val_to_process));
+			HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+			vTaskDelay(atoi(val_to_process));
+		}
+	}
+}
+````
 
 ---
 
