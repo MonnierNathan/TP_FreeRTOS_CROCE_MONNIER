@@ -428,7 +428,11 @@ int main(void)
 
 **1. Quel est le nom de la zone réservée à l’allocation dynamique ?**
 
+La zone réservée à l'allocation dynamique à pour nom le Tas.
+
 **2. Est-ce géré par FreeRTOS ou la HAL ?**
+
+Le Tas est géré par FreeRTOS.
 
 **3. Si ce n’est déjà fait, ajoutez de la gestion d’erreur sur toutes les fonctions
 pouvant générer des erreurs. En cas d’erreur, affichez un message et appelez
