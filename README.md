@@ -440,16 +440,20 @@ la fonction `Error_Handler();`**
 
 **4. Notez la mémoire RAM et Flash utilisée, comme dans l’exemple ci-dessous**
 
-![image1](https://github.com/MonnierNathan/TP_FreeRTOS_CROCE_MONNIER/blob/main/images/thumbnail_Build_Analyser.png "image1")
+![image1](https://github.com/MonnierNathan/TP_FreeRTOS_CROCE_MONNIER/blob/main/images/Screenshot%20from%202025-05-07%2011-23-07.png "image1")
 
 **5. Créez des tâches bidons jusqu’à avoir une erreur**
 
 **6. Notez la nouvelle utilisation mémoire.**
 
+![image1](https://github.com/MonnierNathan/TP_FreeRTOS_CROCE_MONNIER/blob/main/images/Screenshot%20from%202025-05-07%2011-23-07.png "image1")
+
 **7. Dans CubeMX, augmentez la taille du tas (TOTAL_HEAP_SIZE). Générez le
 code, compilez et testez.**
 
 **8. Notez la nouvelle utilisation mémoire. Expliquez les trois relevés.**
+
+![image1](https://github.com/MonnierNathan/TP_FreeRTOS_CROCE_MONNIER/blob/main/images/Screenshot%20from%202025-05-07%2011-23-07.png "image1")
 
 ---
 
