@@ -440,6 +440,8 @@ la fonction `Error_Handler();`**
 
 **4. Notez la mémoire RAM et Flash utilisée, comme dans l’exemple ci-dessous**
 
+![image1](https://github.com/MonnierNathan/TP_FreeRTOS_CROCE_MONNIER/blob/main/images/thumbnail_Build_Analyser.png_"image1")
+
 **5. Créez des tâches bidons jusqu’à avoir une erreur**
 
 **6. Notez la nouvelle utilisation mémoire.**
